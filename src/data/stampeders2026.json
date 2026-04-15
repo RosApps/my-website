@@ -1,0 +1,11 @@
+{
+  "season": "2026",
+  "record": { "wins": 0, "losses": 0, "ties": 0 },
+  "nextGame": {
+    "date": "TBD",
+    "time": "TBD",
+    "opponent": "TBD"
+  },
+  "lastResult": null,
+  "isGameDay": false
+}
