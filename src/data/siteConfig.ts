@@ -8,7 +8,6 @@ export const person = {
   drivingPhilosophy: "Driven by making people smile while making a difference alongside my team.",
   email: "ronakpanch66@gmail.com",
   linkedin: "https://www.linkedin.com/in/ronakpanchmatia",
-  resume: "/resume.pdf",
 };
 
 export const navigation = {
