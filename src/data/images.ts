@@ -43,6 +43,11 @@ export const images = {
     truscottPharmacy:         "/images/IDA.png",
   },
 
+  // ── Testimonial screenshots ────────────────────────────────────────────────
+  testimonials: {
+    andrewRayman: "/images/arquote.jpg",
+  },
+
   // ── Legacy alias kept for backwards compatibility ──────────────────────────
   hero: {
     headshot: "/images/Ronaks-headshot.png",
