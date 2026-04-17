@@ -10,6 +10,8 @@ import { statusBar } from "@/data/statusBar";
 import { designations, type Designation } from "@/data/designations";
 import { timeline } from "@/data/timelineData";
 import { skillCategories } from "@/data/skillCategories";
+import { testimonials } from "@/data/testimonials";
+import { TestimonialCard } from "@/components/TestimonialCard";
 
 const NOISE_SVG =
   "data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/></svg>";
@@ -542,6 +544,22 @@ export default function ProfessionalPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* LEADERSHIP VOICE */}
+      <section id="leadership-voice" className="w-full bg-surface py-12">
+        <div className="mx-auto max-w-6xl px-6">
+          <p className="mb-8 text-xs uppercase tracking-[0.3em] text-gold-muted">
+            LEADERSHIP VOICE
+          </p>
+          <h2 className="mb-2 font-[Syne] text-3xl font-bold text-ivory">
+            What Leadership Says
+          </h2>
+          <p className="mb-8 font-[DM_Sans] text-base text-ivory/70">
+            Unsolicited feedback from the executive leadership I worked with.
+          </p>
+          <TestimonialCard testimonial={testimonials[0]} />
         </div>
       </section>
 
