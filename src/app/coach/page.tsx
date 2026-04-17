@@ -6,6 +6,8 @@ import { fadeUp, pageTransition, staggerContainer } from "@/lib/animations";
 import { Footer } from "@/components/Footer";
 import { coachingTimeline } from "@/data/coachingTimeline";
 import { footballGlossary } from "@/data/footballGlossary";
+import { testimonials } from "@/data/testimonials";
+import { TestimonialCard } from "@/components/TestimonialCard";
 import stampeders2026 from "@/data/stampeders2026.json";
 
 type GameResult = {
@@ -205,17 +207,17 @@ export default function CoachPage() {
                       "Produced the league leader in Kickoff/Punt Return Touchdowns",
                     ],
                     "western-women": [
-                      "2 Championships",
+                      "3 Provincial Championships",
                       "7 All-Pro Selections (4 First Team, 3 Second Team)",
                       "3 League Season Awards from players",
                       "2 Team Season Awards from players",
                       "Coach of the Year",
                     ],
                     rotherglen: [
-                      "2 Championships",
+                      "3 Championships",
                       "2 League MVPs",
                       "Built and ran the defensive game plan from first season",
-                      "Led defence to championship victories in both seasons",
+                      "Led defence to championship victories in first three seasons",
                     ],
                   };
 
@@ -339,6 +341,27 @@ export default function CoachPage() {
               </motion.div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* LEADERSHIP VOICE */}
+      <section id="leadership-voice" className="w-full bg-surface py-12">
+        <div className="mx-auto max-w-6xl px-6">
+          <p className="mb-8 text-xs uppercase tracking-[0.3em] text-gold-muted">
+            LEADERSHIP VOICE
+          </p>
+          <h2 className="mb-2 font-[Syne] text-3xl font-bold text-ivory">
+            What Leadership Says
+          </h2>
+          <p className="mb-8 font-[DM_Sans] text-base text-ivory/70">
+            Unsolicited feedback from the head coaches I&rsquo;ve worked
+            alongside.
+          </p>
+          {testimonials
+            .filter((t) => t.scope === "coach")
+            .map((t) => (
+              <TestimonialCard key={t.id} testimonial={t} />
+            ))}
         </div>
       </section>
 

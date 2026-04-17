@@ -9,7 +9,13 @@ interface TestimonialCardProps {
 }
 
 export function TestimonialCard({ testimonial }: TestimonialCardProps) {
-  const { quote, attribution, sourceUrl } = testimonial;
+  const { quote, attribution, sourceUrl, sourcePrefix, sourceLinkText } =
+    testimonial;
+
+  const isMailto = sourceUrl.startsWith("mailto:");
+  const linkProps = isMailto
+    ? {}
+    : { target: "_blank", rel: "noopener noreferrer" };
 
   return (
     <motion.div
@@ -39,14 +45,13 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
       </div>
 
       <p className="mt-6 text-center font-[DM_Sans] text-base text-ivory-muted">
-        See the original post on{" "}
+        {sourcePrefix && <>{sourcePrefix} </>}
         <a
           href={sourceUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+          {...linkProps}
           className="text-gold underline-offset-4 hover:underline"
         >
-          LinkedIn
+          {sourceLinkText}
         </a>
       </p>
     </motion.div>

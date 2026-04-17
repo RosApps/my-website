@@ -559,7 +559,19 @@ export default function ProfessionalPage() {
           <p className="mb-8 font-[DM_Sans] text-base text-ivory/70">
             Unsolicited feedback from the executive leadership I worked with.
           </p>
-          <TestimonialCard testimonial={testimonials[0]} />
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            className="grid grid-cols-1 gap-6 lg:grid-cols-2"
+          >
+            {testimonials
+              .filter((t) => t.scope === "professional")
+              .map((t) => (
+                <TestimonialCard key={t.id} testimonial={t} />
+              ))}
+          </motion.div>
         </div>
       </section>
 
