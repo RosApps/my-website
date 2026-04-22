@@ -1,9 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
+import { Award } from "lucide-react";
 import { fadeUp, pageTransition, staggerContainer } from "@/lib/animations";
 import { Footer } from "@/components/Footer";
+import { Timeline } from "@/components/Timeline";
+import { Card, CardContent } from "@/components/ui/card";
+import { studentTimelineData } from "@/data/studentTimelineData";
 
 const whyMBA = [
   {
@@ -35,10 +40,18 @@ const academics = [
   },
 ];
 
-const middleInterests = [
+type MiddleInterest = {
+  title: string;
+  body?: string;
+  subhead?: string;
+  bullets?: string[];
+  icon?: typeof Award;
+};
+
+const middleInterests: MiddleInterest[] = [
   {
-    title: "AAA Basketball",
-    body: "Four seasons with the Mississauga Monarchs in the OBA. Competed in OBA Playoffs alongside teammates who went on to play professionally in the NBA.",
+    title: "Duke of Edinburgh's Award, Silver",
+    body: "Royal-patronage international youth award earned by completing twelve-month concurrent commitments across volunteering, skill development, and physical recreation, capped by a multi-day wilderness expedition. Recognised in 130+ countries as a credential for self-direction and sustained execution.",
   },
   {
     title: "Golf & ClubLink",
@@ -221,83 +234,135 @@ export default function StudentPage() {
         </div>
       </section>
 
+      {/* EXTRACURRICULAR & LEADERSHIP JOURNEY */}
+      <section className="w-full bg-charcoal py-12">
+        <div className="mx-auto max-w-6xl px-6">
+          <p className="mb-8 text-xs uppercase tracking-[0.3em] text-gold-muted">
+            EXTRACURRICULAR & LEADERSHIP JOURNEY
+          </p>
+          <Card
+            size="sm"
+            className="mb-8 border border-gold-muted/30 bg-surface ring-0"
+          >
+            <CardContent>
+              <p className="text-base italic leading-relaxed text-ivory-muted">
+                Throughout these years, Ronak has been coaching competitively.
+                Now in his 11th season at the AAA level, the full coaching
+                journey lives{" "}
+                <Link
+                  href="/coach"
+                  className="text-gold underline underline-offset-2 hover:text-gold-muted"
+                >
+                  here
+                </Link>
+                .
+              </p>
+            </CardContent>
+          </Card>
+          <Timeline data={studentTimelineData} />
+        </div>
+      </section>
+
       {/* BEYOND THE CLASSROOM */}
       <section className="w-full bg-charcoal py-12">
         <div className="mx-auto max-w-6xl px-6">
           <p className="mb-8 text-xs uppercase tracking-[0.3em] text-gold-muted">
             BEYOND THE CLASSROOM
           </p>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
-            {/* Toronto Sports Fan - large left card */}
-            <div className="relative min-h-[300px] overflow-hidden rounded-xl md:col-span-1 md:row-span-2">
-              <Image
-                src="/images/bluejays.jpg"
-                alt=""
-                fill
-                sizes="(max-width: 768px) 100vw, 25vw"
-                className="absolute inset-0 object-cover"
-                style={{ objectPosition: "center center" }}
-              />
-              <div
-                aria-hidden
-                className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"
-              />
-              <div className="relative z-10 flex h-full flex-col justify-end p-5">
-                <h3 className="text-lg font-bold text-ivory">
-                  Toronto Sports Fan
-                </h3>
-                <p className="mt-2 text-base text-ivory-muted">
-                  Lifelong Blue Jays and Raptors loyalty passed down from my
-                  father. This is my brother and me at World Series Game 1 in
-                  2025. The allegiance predates any championship window and
-                  outlasts every rebuild.
-                </p>
+          <div className="flex flex-col gap-6">
+            {/* Row 1: Photo cards at 50/50 */}
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              {/* Toronto Sports Fan */}
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                <Image
+                  src="/images/bluejays.jpg"
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="absolute inset-0 object-cover"
+                  style={{ objectPosition: "center center" }}
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/60 to-transparent p-6">
+                  <h3 className="mb-2 text-2xl font-bold text-white">
+                    Toronto Sports Fan
+                  </h3>
+                  <p className="text-sm text-white/90">
+                    Lifelong Blue Jays and Raptors loyalty passed down from my
+                    father. This is my brother and me at World Series Game 1 in
+                    2025. The allegiance predates any championship window and
+                    outlasts every rebuild.
+                  </p>
+                </div>
+              </div>
+
+              {/* Green Bay Packers */}
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                <Image
+                  src="/images/packers.jpg"
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="absolute inset-0 object-cover"
+                  style={{ objectPosition: "center center" }}
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/60 to-transparent p-6">
+                  <h3 className="mb-2 text-2xl font-bold text-white">
+                    Green Bay Packers
+                  </h3>
+                  <p className="text-sm text-white/90">
+                    A Packers fan since age four. Not a bandwagon, a birthright.
+                    The kind of loyalty that survives cold January nights at
+                    Lambeau and defines how I approach commitment.
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Middle 2x2 grid of small cards */}
-            <div className="md:col-span-2">
-              <div className="grid h-full grid-cols-1 gap-4 md:grid-cols-2">
-                {middleInterests.map((item) => (
-                  <div
+            {/* Row 2: Four text cards */}
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {middleInterests.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Card
                     key={item.title}
-                    className="rounded-xl border border-surface-light bg-surface p-5"
+                    size="sm"
+                    className="border border-surface-light bg-surface ring-0"
                   >
-                    <h3 className="text-lg font-semibold text-ivory">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-base leading-relaxed text-ivory-muted">
-                      {item.body}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Green Bay Packers - large right card */}
-            <div className="relative min-h-[300px] overflow-hidden rounded-xl md:col-span-1 md:row-span-2">
-              <Image
-                src="/images/packers.jpg"
-                alt=""
-                fill
-                sizes="(max-width: 768px) 100vw, 25vw"
-                className="absolute inset-0 object-cover"
-                style={{ objectPosition: "center center" }}
-              />
-              <div
-                aria-hidden
-                className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"
-              />
-              <div className="relative z-10 flex h-full flex-col justify-end p-5">
-                <h3 className="text-lg font-bold text-ivory">
-                  Green Bay Packers
-                </h3>
-                <p className="mt-2 text-base text-ivory-muted">
-                  A Packers fan since age four. Not a bandwagon, a birthright.
-                  The kind of loyalty that survives cold January nights at
-                  Lambeau and defines how I approach commitment.
-                </p>
-              </div>
+                    <CardContent>
+                      <div className="flex items-start gap-2">
+                        {Icon && (
+                          <Icon className="mt-1 size-5 shrink-0 text-gold" />
+                        )}
+                        <h3 className="text-lg font-semibold text-ivory">
+                          {item.title}
+                        </h3>
+                      </div>
+                      {item.subhead && (
+                        <p className="mt-2 text-base text-gold">
+                          {item.subhead}
+                        </p>
+                      )}
+                      {item.body && (
+                        <p className="mt-2 text-base leading-relaxed text-ivory-muted">
+                          {item.body}
+                        </p>
+                      )}
+                      {item.bullets && (
+                        <ul className="mt-2 list-none space-y-1">
+                          {item.bullets.map((b, i) => (
+                            <li key={i} className="flex items-start gap-2">
+                              <span className="text-gold">•</span>
+                              <span className="text-base leading-relaxed text-ivory-muted">
+                                {b}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </div>
