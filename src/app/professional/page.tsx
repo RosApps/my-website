@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import { fadeUp, fadeIn, pageTransition, staggerContainer } from "@/lib/animations";
 import { Footer } from "@/components/Footer";
+import { Timeline } from "@/components/Timeline";
 import { statusBar } from "@/data/statusBar";
 import { designations, type Designation } from "@/data/designations";
 import { timeline } from "@/data/timelineData";
@@ -320,7 +321,7 @@ export default function ProfessionalPage() {
             </div>
 
             {/* Right column */}
-            <div className="md:col-span-2 md:max-h-[350px] md:overflow-hidden">
+            <div className="md:col-span-2">
               <h1 className="font-[Syne] text-3xl font-bold text-ivory md:text-4xl">
                 Ronak Panchmatia
               </h1>
@@ -423,55 +424,7 @@ export default function ProfessionalPage() {
             CAREER TIMELINE
           </p>
 
-          <div className="relative">
-            <div
-              aria-hidden
-              className="absolute left-1.5 top-0 bottom-0 w-0.5 bg-gold-muted/30"
-            />
-            <div className="space-y-10">
-              {timeline.map((item) => {
-                const isWmcc = item.id === "wmcc";
-                const label = isWmcc
-                  ? "Western Management Consulting Club"
-                  : item.label;
-                const bullets = item.detail
-                  .split(/\.(?:\s+|$)/)
-                  .map((s) => s.trim())
-                  .filter(Boolean)
-                  .map((s) => (s.endsWith(".") ? s : `${s}.`));
-                return (
-                  <motion.div
-                    key={item.id}
-                    variants={fadeUp}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.3 }}
-                    className="relative pl-8"
-                  >
-                    <span
-                      aria-hidden
-                      className="absolute left-0 top-1.5 h-3 w-3 rounded-full bg-gold"
-                    />
-                    <h3 className="text-xl font-bold text-ivory">{label}</h3>
-                    <p className="text-base text-gold">
-                      {item.summary.split(".")[0].trim()}
-                    </p>
-                    <p className="text-base text-ivory-muted">{item.period}</p>
-                    <ul className="mt-2 list-none space-y-1">
-                      {bullets.map((b, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <span className="text-gold">•</span>
-                          <span className="text-base text-ivory-muted">
-                            {b}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
+          <Timeline data={timeline} />
         </div>
       </section>
 
