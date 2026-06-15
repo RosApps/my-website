@@ -109,6 +109,18 @@ export const timeline: TimelineItem[] = [
     imagePath: "/images/CIBCWG.png",
   },
   {
+    id: "rotherglen-camp",
+    label: "Rotherglen School Summer Camps",
+    icon: "Briefcase",
+    period: "April 2021 - September 2022",
+    dateRange: { start: [2021, 4], end: [2022, 9] },
+    summary: "Head Camp Counsellor. Oakville, Ontario.",
+    detail:
+      "Promoted from seasonal Camp Counsellor to Head Camp Counsellor, leading the recreation arm of the camp with all sports and physical activity programming routed through this role. Coordinated daily recreation scheduling across 7 camp groups in direct partnership with each group's lead counsellor, sequencing access to shared spaces to keep cohorts separated and minimise cross-contact. Designed and delivered structured sports sessions for groups of varying ages and skill levels, applying a coaching lens to manage participation, behaviour, and group dynamics across concurrent activities.",
+    weight: "expanded",
+    imagePath: null,
+  },
+  {
     id: "beertown",
     label: "Beertown Public House",
     icon: "Briefcase",
@@ -122,17 +134,16 @@ export const timeline: TimelineItem[] = [
     imagePath: "/images/BTlogo.png",
   },
   {
-    id: "wmcc",
-    label: "Western Management Consulting Club, VP",
-    icon: "TrendingUp",
-    period: "September 2019 - April 2021",
-    dateRange: { start: [2019, 9], end: [2021, 4] },
-    summary:
-      "Vice President. Led a live client engagement for Chatime (QSR).",
+    id: "aw-oakville",
+    label: "A&W, Oakville",
+    icon: "Briefcase",
+    period: "April 2017 - September 2019",
+    dateRange: { start: [2017, 4], end: [2019, 9] },
+    summary: "Lead Expediter. Oakville, Ontario.",
     detail:
-      "Managed a team of student consultants through a live client engagement for Chatime (QSR), mapping the end-to-end customer journey and identifying mobile order congestion as the primary fulfilment bottleneck. Presented a store remodel proposal to franchise ownership, securing buy-in and delivering a 37% reduction in consumer complaints.",
+      "Promoted from Cashier to Lead Expediter, coordinating order flow between kitchen and service stations during peak volume to maintain ticket times and order accuracy. Cross-trained across all kitchen and front-of-house stations including drive-through, grill, fryer, line cook, prep, and cashier, building full operational fluency in a high-volume quick-service environment.",
     weight: "expanded",
-    imagePath: "/images/WMC.png",
+    imagePath: null,
   },
   {
     id: "truscott",
