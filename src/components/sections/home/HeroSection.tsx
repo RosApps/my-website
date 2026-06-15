@@ -90,7 +90,7 @@ export function HeroSection() {
           {/* Floating badge */}
           <div className="absolute -bottom-4 -right-4 rounded-xl border border-blue-500/30 bg-[#0d1422]/90 px-3 py-2 backdrop-blur-sm">
             <p className="font-mono text-[0.62rem] uppercase tracking-[0.18em] text-blue-300">
-              93-10-1
+              94-14-1
             </p>
             <p className="font-mono text-[0.56rem] text-slate-500">
               Coaching Record

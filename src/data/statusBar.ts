@@ -3,12 +3,13 @@
 
 export const statusBar = {
   currentlyWorkingOn: [
-    "Business Transformation Consultant · ShipNoble Inc.",
+    "Incoming: Technology Consultant · EY Banking Technology",
     "Defensive Line Coach · Burlington Stampeders AAA U18",
     "MBA Co-op · DeGroote School of Business, McMaster",
     "CAPM Examination Preparation · Project Management Institute",
   ],
   recentlyCompleted: [
+    "Business Transformation Consultant · ShipNoble Inc.",
     "FITP Designation · Corporate Finance Institute",
     "Freight Pricing Calculator · Deployed",
     "Burlington Stampeders Scouting App · Launched",

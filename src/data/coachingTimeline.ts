@@ -152,7 +152,7 @@ export const coachingTimeline: CoachingProgram[] = [
 
 export const coachingCareerTotals = {
   seasons: "11",
-  record: "93-10-1",
+  record: "94-14-1",
   championships: "6",
   allProSelections: "17+",
   coachOfTheYear: 2,

@@ -43,6 +43,19 @@ export type ConcurrentTrack = {
 
 export const timeline: TimelineItem[] = [
   {
+    id: "ey",
+    label: "EY (Ernst & Young)",
+    icon: "Landmark",
+    period: "September 2026 - December 2026",
+    dateRange: { start: [2026, 9], end: [2026, 12] },
+    summary:
+      "Technology Consultant · Co-op #2 of 3. Banking Technology.",
+    detail:
+      "Incoming EY (Ernst & Young) co-op as a Technology Consultant on the Banking Technology team.",
+    weight: "expanded",
+    imagePath: null,
+  },
+  {
     id: "shipnoble",
     label: "ShipNoble Inc.",
     icon: "TrendingUp",
@@ -149,6 +162,7 @@ export const concurrentTimeline: ConcurrentTrack[] = [
       { id: "banquet-bar", label: "The Banquet Bar", start: [2023, 8], end: [2024, 4] },
       { id: "jack-astors", label: "Jack Astor's Bar and Grill", start: [2024, 4], end: [2025, 9] },
       { id: "shipnoble", label: "ShipNoble Inc., Co-op #1 of 3", start: [2026, 1], end: [2026, 4] },
+      { id: "ey", label: "EY · Banking Technology", start: [2026, 9], end: [2026, 12] },
     ],
   },
   {

@@ -26,7 +26,7 @@ const industries = [
     color: "blue",
     signal: "FITP Designation. CIBC Wood Gundy, April 2023 to February 2024. DeGroote MBA Capital Fund.",
     depth:
-      "FITP-certified through the Corporate Finance Institute, covering fintech, digital payments, blockchain, and the intersection of finance and technology. The CIBC Wood Gundy placement added nearly a year of direct banking operations exposure. The MBA Capital Fund keeps the investment lens active. Banking technology is an active area of interest with a useful technical and commercial lens.",
+      "FITP-certified through the Corporate Finance Institute, covering fintech, digital payments, blockchain, and the intersection of finance and technology. The CIBC Wood Gundy placement added nearly a year of direct banking operations exposure. The MBA Capital Fund keeps the investment lens active. Banking technology is an active area of interest with a useful technical and commercial lens. Incoming EY Banking Technology co-op evidences the banking-technology affinity.",
     applications: [
       "Fintech, digital payments, and blockchain",
       "Wealth management operations",
@@ -50,7 +50,7 @@ const industries = [
     id: "sports",
     title: "Sports",
     color: "violet",
-    signal: "Currently in his 11th season of coaching. Scouting app. Playbook Diagrammer. 93-10-1 combined record across four programmes, six championships.",
+    signal: "Currently in his 11th season of coaching. Scouting app. Playbook Diagrammer. 94-14-1 combined record across four programmes, six championships.",
     depth:
       "More than a decade of competitive football coaching across four programmes, six championships. The sports vertical is unique because it combines genuine domain expertise with concrete business assets: a scouting application, an AI-powered playbook diagrammer, and a coaching track record with quantifiable outcomes. The people development and high-performance team dynamics translate directly to consulting and leadership.",
     applications: [

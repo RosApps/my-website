@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import { fadeUp, fadeIn, pageTransition, staggerContainer } from "@/lib/animations";
 import { Footer } from "@/components/Footer";
-import { statusBar } from "@/data/statusBar";
 import { designations, type Designation } from "@/data/designations";
 import { timeline } from "@/data/timelineData";
 import { skillCategories } from "@/data/skillCategories";
@@ -17,7 +16,6 @@ const NOISE_SVG =
   "data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/></svg>";
 
 const availability = [
-  "Fall 2026 Co-op",
   "Summer 2027 Co-op",
   "New Graduate Jan 2028",
 ];
@@ -281,7 +279,6 @@ function SkillsTabs() {
 
 export default function ProfessionalPage() {
   const [selected, setSelected] = useState<Designation | null>(null);
-  const currentStatus = statusBar.currentlyWorkingOn[0];
 
   return (
     <motion.main
@@ -299,7 +296,7 @@ export default function ProfessionalPage() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 items-start gap-12 md:grid-cols-3"
+            className="grid grid-cols-1 items-center gap-12 md:grid-cols-3"
           >
             {/* Headshot */}
             <div className="relative mx-auto w-full max-w-xs md:col-span-1">
@@ -320,7 +317,7 @@ export default function ProfessionalPage() {
             </div>
 
             {/* Right column */}
-            <div className="md:col-span-2 md:max-h-[350px] md:overflow-hidden">
+            <div className="md:col-span-2">
               <h1 className="font-[Syne] text-3xl font-bold text-ivory md:text-4xl">
                 Ronak Panchmatia
               </h1>
@@ -328,11 +325,15 @@ export default function ProfessionalPage() {
                 MBA Candidate (Co-op) | DeGroote School of Business
               </p>
 
-              {/* Status */}
-              <div className="mt-3">
-                <span className="inline-flex items-center rounded-full border border-surface-light bg-surface px-3 py-1 text-sm text-ivory-muted">
+              {/* Identity */}
+              <div className="mt-4 flex flex-col items-start gap-2">
+                <span className="inline-flex items-center rounded-full border border-surface-light bg-surface px-3 py-1 text-base text-ivory-muted">
                   <span className="mr-2 inline-block h-2 w-2 rounded-full bg-green-500" />
-                  {currentStatus}
+                  Incoming Technology Consultant · EY (Banking Technology)
+                </span>
+                <span className="inline-flex items-center rounded-full border border-surface-light bg-surface px-3 py-1 text-base text-ivory-muted">
+                  <span className="mr-2 inline-block h-2 w-2 rounded-full bg-green-500" />
+                  Currently on MBA Academic Term 2 of 4
                 </span>
               </div>
 
@@ -354,7 +355,7 @@ export default function ProfessionalPage() {
               </div>
 
               {/* Designations */}
-              <div className="mt-3 flex flex-col gap-0">
+              <div className="mt-3 grid grid-cols-2 gap-3">
                 {designations.map((d) => (
                   <button
                     key={d.id}

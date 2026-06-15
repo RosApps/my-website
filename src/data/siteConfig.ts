@@ -48,7 +48,7 @@ export const sections = {
     eyebrow: "The Coach",
     title: "Coach Ro",
     intro: "Currently in his 11th season. Four programmes. One constant.",
-    record: "93-10-1",
+    record: "94-14-1",
   },
   bento: {
     eyebrow: "Skills",
