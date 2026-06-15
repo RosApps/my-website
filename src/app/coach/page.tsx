@@ -21,7 +21,7 @@ type SeasonData = {
 };
 
 const careerStats: { value: string; label: string; nowrap?: boolean }[] = [
-  { value: "93-10-1", label: "Record All-Time", nowrap: true },
+  { value: "94-14-1", label: "Record All-Time", nowrap: true },
   { value: "6", label: "Championships" },
   { value: "4", label: "Programmes" },
   { value: "2", label: "COTY" },

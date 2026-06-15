@@ -15,7 +15,7 @@ const ribbonStats = [
   { value: "$300K", label: "Recovered" },
   { value: "4", label: "Designations" },
   { value: "2", label: "Degrees" },
-  { value: "93-10-1", label: "Coaching Record" },
+  { value: "94-14-1", label: "Coaching Record" },
   { value: "6", label: "Championships" },
 ];
 
@@ -25,7 +25,7 @@ const journeyPanels = [
     image: "/images/Ronaks-headshot.png",
     label: "PROFESSIONAL",
     title: "From 85-Hour Weeks to $300K Recovery",
-    stat: "$300K margin recovery across 12 shipping zones",
+    stat: "Incoming EY co-op · $300K margin recovery at ShipNoble",
   },
   {
     href: "/student",
@@ -39,7 +39,7 @@ const journeyPanels = [
     href: "/coach",
     image: "/images/CoachRoHeadshot.jpeg",
     label: "COACH",
-    title: "93-10-1. Six Championships.",
+    title: "94-14-1. Six Championships.",
     stat: "2 Coach of the Year Awards",
   },
 ];

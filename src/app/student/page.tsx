@@ -21,7 +21,7 @@ const whyMBA = [
   },
   {
     title: "Generalist by Design",
-    body: "Healthcare, banking technology, supply chain, and sports. Four genuine affinities developed through real experience, not classroom interest. The MBA is the framework to apply them all.",
+    body: "Healthcare, banking technology (incoming EY co-op), supply chain, and sports. Four genuine affinities developed through real experience, not classroom interest. The MBA is the framework to apply them all.",
   },
 ];
 
